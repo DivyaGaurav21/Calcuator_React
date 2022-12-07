@@ -1,0 +1,59 @@
+ button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    margin: 7px;
+    font-size: 23px;
+    background-color: #c3cbdc;
+    background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);  
+}
+ button:hover{
+    cursor: pointer;
+    background-color: #6b8bf5;
+    background-image: linear-gradient(315deg, #ffffff 0%, #f09f9f 74%);
+    
+}
+.btn-container{
+   box-sizing: border-box;
+    width: 25vw;
+    min-width: 350px;
+    background-color: #537895;
+    background-image: linear-gradient(165deg, #7ba8ca 0%, #1d395e 74%);
+    padding: 22px 0px 22px 22px;
+    border-radius:0px 0px 7px 7px;
+    box-shadow: inset -3px -3px 7px #ffffff ,-2px -3px 5px 
+    rgba(0,0,0, .29),inset 3px -3px 7px #ffffff;
+    border: 1px solid rgb(133, 135, 230);
+}
+.span-two{
+    width: 95px;
+    border-radius: 45%;
+    height: 55px;
+}
+
+
+.output{
+    width: 24vw;
+    height: 6rem;
+    min-width: 348px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: .75rem;
+    box-shadow: inset 5px 5px 12px #ffffff ,5px 5px 12px 
+    rgba(0,0,0, .29);
+    border-radius:7px 7px 0px 0px;
+    background-color: #ddcad9;
+    background-image: linear-gradient(315deg, #ddcad9 0%, #d1b1cb 74%);
+}
+.output .prev-operand{
+    color:rgba(255, 255,255, .75);
+    font-size: 1.5rem;
+}
+.output .curr-operand{
+    color: white;
+    font-size: 2.5rem;
+}
