@@ -5,7 +5,7 @@ const DigitButton = (props) => {
  
     function clickHandler(){
         const digit = props.digit;
-        props.dispatchFn({type : ACTIONS.ADD_DIGIT  , payload : {digit} })
+        props.dispatchFn({type : ACTIONS.ADD_DIGIT  , payload : { digit } })
     }
 
   return (
