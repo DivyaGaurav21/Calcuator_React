@@ -13,8 +13,16 @@ export const ACTIONS = {
 }
 
 const reducer = (state,  {type , payload}) => {
-  switch(type){
+  switch (type) {
+    
     case ACTIONS.ADD_DIGIT:
+      if (state.overwritedigit) {
+        return {
+          ...state,
+          currOperand: payload.digit,
+          overwritedigit : false
+        }
+      }
       if(payload.digit === "0" && state.currOperand === "0") {
         return state;
       };
@@ -26,6 +34,12 @@ const reducer = (state,  {type , payload}) => {
          currOperand: `${state.currOperand || ""}${payload.digit}`
       }
      
+    case ACTIONS.DELETE_DIGIT: 
+      return {
+        ...state,
+        currOperand: state.currOperand.slice(0, -1)
+      }
+    
     case ACTIONS.CHOOSE_OPERATION:
       if (state.currOperand === null && state.prevOperand == null) {
         return state;
@@ -50,7 +64,17 @@ const reducer = (state,  {type , payload}) => {
         operation: payload.operation,
         currOperand : null
       }
-    
+    case ACTIONS.EVALUTE: 
+      if (state.operation == null || state.currOperand == null || state.prevOperand == null) {
+        return state;
+      }
+      return {
+        ...state,
+        overwritedigit : true,
+        prevOperand: null,
+        operation:null,
+        currOperand : evaluate(state)
+      }
     
     
     case ACTIONS.CLEAR:
@@ -69,7 +93,7 @@ function evaluate({ currOperand, prevOperand, operation }) {
     case "+":
       finalEvaluate = prev + current;
       break;
-    case "-":
+    case "–":
       finalEvaluate = prev - current;
       break;
     case "×":
@@ -93,6 +117,9 @@ const CalsUi = () => {
   const equalHandler = () => {
     dispatchFn({type : ACTIONS.EVALUTE})
   }
+  const deleteSingleDigitHandler = () => {
+    dispatchFn({type:ACTIONS.DELETE_DIGIT})
+  }
 
   return (
     <Fragment>
@@ -102,7 +129,7 @@ const CalsUi = () => {
       </div>
       <div className='btn-container'>
         <button className="span-two" onClick={clearHandler}>AC</button>
-        <button className='span-two'>DEL</button>
+        <button className='span-two' onClick={deleteSingleDigitHandler}>DEL</button>
          <OperationButton operation= "÷" dispatchFn = {dispatchFn}/>
         <br />
         <DigitButton digit= "1" dispatchFn = {dispatchFn}/>
