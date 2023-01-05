@@ -1,3 +1,4 @@
+ /* All button have common css  */
  button{
     width: 60px;
     height: 60px;
@@ -8,12 +9,14 @@
     background-color: #c3cbdc;
     background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);  
 }
+/* on hovering button css  */
  button:hover{
     cursor: pointer;
     background-color: #6b8bf5;
     background-image: linear-gradient(315deg, #ffffff 0%, #f09f9f 74%);
     
 }
+/* button container  */
 .btn-container{
    box-sizing: border-box;
     width: 25vw;
@@ -32,7 +35,7 @@
     height: 55px;
 }
 
-
+/* output css  */
 .output{
     width: 24vw;
     height: 6rem;
@@ -49,11 +52,13 @@
     background-color: #ddcad9;
     background-image: linear-gradient(315deg, #ddcad9 0%, #d1b1cb 74%);
 }
+/* prev operand css  */
 .output .prev-operand{
     color:black;
     font-size: 1.2rem;
      font-family: 'Orbitron', sans-serif;
 }
+/* current operand css  */
 .output .curr-operand{
     color:black;
     font-size: 2.3rem;

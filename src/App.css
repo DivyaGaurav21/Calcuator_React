@@ -1,15 +1,16 @@
+/* app body css  */
 body{
    background: linear-gradient(to right , #e0f0b6 , #94ebec);
 }
+/* app class css  */
 .App{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+/* claculator body css  */
 .calculator-body{
-    /* width: 30vw; */
-    /* min-width: 390px; */
     padding: 40px 22px 22px;
     display: flex;
     flex-direction: column;
